@@ -111,6 +111,12 @@ def profile():
 		pw = request.form['password']
 		pw = pw.encode('utf-8')
 		spw = bcrypt.hashpw(pw, bcrypt.gensalt())
+		Rfile = request.files['avatarchange']
+		if(Rfile is not None):
+			Rfile.save('static/uploads/avatar' + name +'.png')
+			db = get_db()
+			db.cursor().execute('UPDATE accounts SET avatar="static/uploads/avatar'+name+'.png" WHERE user ="'+name+'"')
+			db.commit()
 		if(user is not None and pw is not None):
 			db = get_db()
 			db.cursor().execute('UPDATE accounts SET user="'+user+'" WHERE user ="'+name+'"')
