@@ -28,7 +28,7 @@
               </div>
               <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
-                  <li class="active nav-item">
+                  <li class="nav-item">
                     <a href="../login/" class="nav-link">
                       Login
                     </a>
@@ -39,8 +39,8 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../profile/" class="nav-link">
-                      Profile
+                    <a href="../setting/" class="nav-link">
+                      Settings
                     </a>
                   </li>
                   <li class="nav-item">
@@ -52,13 +52,13 @@
               </div>
             </div>
           </nav>
-  <div class="page-header header-filter" data-parallax="true" style="background-image: url('.././static/img/action-blur-close-up-735911.jpg')">
+  <div class="page-header header-filter" data-parallax="true" style="background-image: url('.././static/img/action-blur-close-up-735911.jpg'); background-size: cover;">
     <div class="container">
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
           <div class="brand text-center">
-            <h1>Team Chat</h1>
-            <h3 class="title text-center">Gaming Central</h3>
+            <h1>Profile</h1>
+            <h3 class="title text-center">{{ user }}</h3>
           </div>
         </div>
       </div>
@@ -66,24 +66,34 @@
   </div>
   <div class="main main-raised">
     <div class="container">
-      <div class="section text-center">
-        <div class="row text-center">
-
-        <form name="login_form" action="" method="post">
-
-		<input type="user" placeholder="Username" name="user">
-		<input type="password" placeholder="Password" name="password">
-		<button type="submit" class="btn btn-info" name="button" value="login">
-			Sign In
-		</button>
-
-		</form>
-		
-		
-
-      </div>
-      </div>
+		{% for mRow in mRows %}
+		<div class="row">
+			<div class="col-sm-4">
+				<p>{{ mRow[1]}}</p>
+				<img src={{ mRow[3] }} alt="">
+			</div>
+			<div class="col-sm-8">
+				<p>Change details?</p>
+				<br><br>
+				<form name="login_form" action="" method="post">
+				<p>Username: </p>
+				<input type="text" placeholder="Change Username" name="user">
+				<br><br>
+				<p>Password: </p>
+				<input type="password" placeholder="Change Password" name="password">
+				<br><br>
+				<p>Avatar: </p>
+				<input type="file" id="myFile" name="avatarchange">
+				<br><br>
+				<button type="submit" class="btn btn-info" name="button" value="profile">
+					Change
+				</button>
+				</form>
+			</div>
+		</div>
+		{% endfor %}
     </div>
+		
   </div>
   <footer class="py-5 bg-dark">
       <div class="container">

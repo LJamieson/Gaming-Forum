@@ -28,19 +28,24 @@
               </div>
               <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
-                  <li class="active nav-item">
+                  <li class="nav-item">
                     <a href="../login/" class="nav-link">
                       Login
                     </a>
                   </li>
-                  <li class="nav-item">
+                  <li class="active nav-item">
                     <a href="../register/" class="nav-link">
                       Register
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#pablo" class="nav-link">
-                      Settings
+                    <a href="../profile/" class="nav-link">
+                      Profile
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../logout/" class="nav-link">
+                      Logout
                     </a>
                   </li>
                 </ul>
@@ -66,9 +71,9 @@
 
         <form name="login_form" action="" method="post">
 
-		<input type="email" placeholder="Email" name="email">
+		<input type="user" placeholder="Username" name="user">
 		<input type="password" placeholder="Password" name="password">
-		<button type="submit" class="btn" name="button" value="register">
+		<button type="submit" class="btn btn-info" name="button" value="register">
 			Sign Up
 		</button>
 

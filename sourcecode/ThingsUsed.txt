@@ -1,2 +1,9 @@
 https://www.pexels.com/photo/photo-of-person-typing-on-computer-keyboard-735911/
 https://www.tutorialspoint.com/flask/flask_sqlite.htm
+https://stackoverflow.com/questions/10404988/python-sqlite3-for-loop-update
+https://www.w3schools.com/booTsTrap/bootstrap_templates.asp
+https://www.w3schools.com/bootstrap4/bootstrap_forms_inputs.asp
+https://www.tutorialspoint.com/sqlite/sqlite_python.htm
+https://placeholder.com/
+https://www.w3schools.com/bootstrap4/bootstrap_grid_examples.asp
+

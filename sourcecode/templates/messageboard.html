@@ -28,7 +28,7 @@
               </div>
               <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
-                  <li class="active nav-item">
+                  <li class="nav-item">
                     <a href="../login/" class="nav-link">
                       Login
                     </a>
@@ -39,8 +39,8 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../profile/" class="nav-link">
-                      Profile
+                    <a href="../settings/" class="nav-link">
+                      Settings
                     </a>
                   </li>
                   <li class="nav-item">
@@ -52,13 +52,13 @@
               </div>
             </div>
           </nav>
-  <div class="page-header header-filter" data-parallax="true" style="background-image: url('.././static/img/action-blur-close-up-735911.jpg')">
+	<div class="page-header header-filter" data-parallax="true" style="background-image: url('.././static/img/action-blur-close-up-735911.jpg'); background-size: cover;">
     <div class="container">
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
           <div class="brand text-center">
-            <h1>Team Chat</h1>
-            <h3 class="title text-center">Gaming Central</h3>
+            <h1>{{ group }}</h1>
+            <h3 class="title text-center">Messageboard</h3>
           </div>
         </div>
       </div>
@@ -66,21 +66,63 @@
   </div>
   <div class="main main-raised">
     <div class="container">
-      <div class="section text-center">
-        <div class="row text-center">
-
-        <form name="login_form" action="" method="post">
-
-		<input type="user" placeholder="Username" name="user">
-		<input type="password" placeholder="Password" name="password">
-		<button type="submit" class="btn btn-info" name="button" value="login">
-			Sign In
+      <div class="section">
+	  
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="well">
+				<p>Admin</p>
+				<img src="https://via.placeholder.com/128" alt="">
+			</div>
+		</div>
+			
+		<div class="col-sm-9">
+			<div class="well">
+				<p>Hello and welcome to the {{ group }} board. Be nice</p>
+			</div>
+		</div>
+    </div>
+      
+      {% for mRow in mRows %}
+      <br><br>	  
+	  <div class="row">
+		<div class="col-sm-3">
+			<div class="well">
+				<p>{{mRow[1]}}</p>
+				<img src="https://via.placeholder.com/128" alt="">
+			</div>
+		</div>
+			
+		<div class="col-sm-9">
+			<div class="well">
+				<p>{{mRow[3]}}</p>
+			</div>
+		</div>
+    </div>
+    {% endfor %}
+    
+    <form name="message_form" action="" method="post">
+    <div class="row">
+		<div class="col-sm-3">
+		</div>
+		
+		<div class="col-sm-9">
+			<div class="form-group">
+				<label for="comment">Comment:</label>
+				<textarea class="form-control" rows="5" name="messagebody"></textarea>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-3">
+		</div>
+		
+		<button type="submit" class="btn btn-info" name="button" value={{ group }}>
+			Send
 		</button>
-
-		</form>
-		
-		
-
+	</div>
+      </form>
       </div>
       </div>
     </div>
