@@ -1,3 +1,6 @@
+DROP TABLE if EXISTS accounts;
+DROP TABLE if EXISTS messages;
+
 CREATE TABLE accounts (
     id integer PRIMARY KEY AUTOINCREMENT,
 	user text NOT NULL,
@@ -8,5 +11,6 @@ CREATE TABLE messages (
 	id integer PRIMARY KEY AUTOINCREMENT,
 	user text NOT NULL,
 	board text NOT NULL,
-	body text
+	body text,
+	avatar text
 );

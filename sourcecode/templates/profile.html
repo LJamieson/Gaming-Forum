@@ -70,12 +70,12 @@
 		<div class="row">
 			<div class="col-sm-4">
 				<p>{{ mRow[1]}}</p>
-				<img src={{ mRow[3] }} alt="" style="width:128px;height:128px;">
+				<img src={{ mRow[3]}} alt="" style="width:128px;height:128px;">
 			</div>
 			<div class="col-sm-8">
 				<p>Change details?</p>
 				<br><br>
-				<form name="login_form" action="" method="post">
+				<form action="" method="post" name="form" enctype="multipart/form-data">
 				<p>Username: </p>
 				<input type="text" placeholder="Change Username" name="user">
 				<br><br>
@@ -83,7 +83,7 @@
 				<input type="password" placeholder="Change Password" name="password">
 				<br><br>
 				<p>Avatar: </p>
-				<input type="file" id="myFile" name="avatarchange">
+				<input type="file" name="datafile"/>
 				<br><br>
 				<button type="submit" class="btn btn-info" name="button" value="profile">
 					Change

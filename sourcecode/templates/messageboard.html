@@ -39,8 +39,8 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../settings/" class="nav-link">
-                      Settings
+                    <a href="../profile/" class="nav-link">
+                      Profile
                     </a>
                   </li>
                   <li class="nav-item">
@@ -58,7 +58,7 @@
         <div class="col-md-8 ml-auto mr-auto">
           <div class="brand text-center">
             <h1>{{ group }}</h1>
-            <h3 class="title text-center">Messageboard</h3>
+            <h3 class="title text-center">{{ valid }}</h3>
           </div>
         </div>
       </div>
@@ -89,7 +89,7 @@
 		<div class="col-sm-3">
 			<div class="well">
 				<p>{{mRow[1]}}</p>
-				<img src="https://via.placeholder.com/128" alt="" style="width:128px;height:128px;">
+				<img src={{mRow[4]}} alt="" style="width:128px;height:128px;">
 			</div>
 		</div>
 			
