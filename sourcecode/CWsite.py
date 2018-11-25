@@ -165,6 +165,7 @@ def other():
 		
 	except:
 		session['current_user'] = ""
+		valid = 'Please login before posting'
 	return render_template('messageboard.html', group = group, mRows = mRows,valid=valid)
 	
 @app.route("/bethesda/", methods=['POST','GET'])
@@ -188,6 +189,7 @@ def bethesda():
 		
 	except:
 		session['current_user'] = ""
+		valid = 'Please login before posting'
 	return render_template('messageboard.html', group = group, mRows = mRows,valid=valid)
 
 @app.route("/microsoft/", methods=['POST','GET'])
@@ -211,6 +213,7 @@ def microsoft():
 		
 	except:
 		session['current_user'] = ""
+		valid = 'Please login before posting'
 	return render_template('messageboard.html', group = group, mRows = mRows,valid=valid)
     
 @app.route("/nintendo/", methods=['POST','GET'])
@@ -234,6 +237,7 @@ def nintendo():
 		
 	except:
 		session['current_user'] = ""
+		valid = 'Please login before posting'
 	return render_template('messageboard.html', group = group, mRows = mRows,valid=valid)
     
 @app.route("/sony/", methods=['POST','GET'])
@@ -257,6 +261,7 @@ def sony():
 		
 	except:
 		session['current_user'] = ""
+		valid = 'Please login before posting'
 	return render_template('messageboard.html', group = group, mRows = mRows,valid=valid)
     
 @app.route("/pc/", methods=['POST','GET'])
@@ -280,6 +285,7 @@ def pc():
 		
 	except:
 		session['current_user'] = ""
+		valid = 'Please login before posting'
 	return render_template('messageboard.html', group = group, mRows = mRows,valid=valid)
 
 @app.route("/login/", methods=['GET', 'POST'])
