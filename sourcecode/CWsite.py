@@ -25,8 +25,8 @@ def init_db():
     with app.app_context():
         db = get_db()
         with app.open_resource('schema.sql', mode='r') as f:
-	    db.cursor().executescript(f.read())
-        db.commit
+			db.cursor().executescript(f.read())
+			db.commit
         
 
 @app.route("/register/", methods=['GET', 'POST'])
@@ -53,33 +53,6 @@ def register():
 
    return render_template('register.html', valid=valid)
 
-@app.route("/debug/")
-def debugList():
-   db = get_db()
-   page = []
-   page.append('<html><ul>')
-   sql = "SELECT * FROM accounts"
-   for row in db.cursor().execute(sql):
-       page.append('<li>')
-       page.append(str(row))
-       page.append('<li>')
-       
-   sql2 = "SELECT * FROM messages"
-   for row in db.cursor().execute(sql2):
-       page.append('<li>')
-       page.append(str(row))
-       page.append('<li>')
-
-   page.append('</ul><html>')
-   data = db.cursor().execute('''SELECT user,password From accounts''')
-   data = data.fetchall()
-   for value in (data):
-        print(value[0])
-	
-   for value in (data):
-        print(value[1])
-	
-   return ''.join(page)
 
 def check_auth(user, password):
 	db = get_db()
@@ -125,6 +98,7 @@ def profile():
 			Rfile.save('static/uploads/avatar' + name +'.png')
 			db = get_db()
 			db.cursor().execute('UPDATE accounts SET avatar="/static/uploads/avatar'+name+'.png" WHERE user ="'+name+'"')
+			db.cursor().execute('UPDATE messages SET avatar="/static/uploads/avatar'+name+'.png" WHERE user ="'+name+'"')
 			db.commit()
 			return redirect(url_for('.home'))
 		if(user is not None and pw is not None):
